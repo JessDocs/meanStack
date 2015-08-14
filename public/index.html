@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="meanStack">
+<head>
+    <meta charset="UTF-8">
+    <title>Birds MeanStack</title>
+    <!--Link CSS-->
+    <link rel="stylesheet" href="style/style.css" type="text/css"/>
+    <!--Link Angular-->
+    <script src="bower_components/angular/angular.js"></script>
+    <!--Link Module-->
+    <script src="js/app.js"></script>
+    <!--Link Conroller-->
+    <script src="controller/MainCtrl.js"></script>
+    <!--Link Service-->
+    <script src="service/dataService.js"></script>
+</head>
+   <!--Use Cloak to avoid root info showing when page first starts-->
+  <body ng-controller="MainCtrl" ng-cloak>
+ 
+    <!--Creates text boxes for input-->
+  <input type="text" placeholder="name" ng-model="bird.name"/>
+  <input type="text" placeholder="order" ng-model="bird.order"/>
+  <input type="text" placeholder="status" ng-model="bird.status"/>
+  <!--invoke function with bird-->
+  <button ng-click="createBird(bird)">Create Bird</button>
+  
+  <button ng-click="getBirds()">Get Birds!</button>
+  
+  <div ng-repeat="bird in birds">{{ bird.name }}</div>
+    
+ 
+</body>
+</html>
